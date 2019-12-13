@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <!--配置文件方式,也可以采用注解-->
+    <!--注解使用依赖：-->
+    <!--<dependency>-->
+    <!--<groupId>javax.servlet</groupId>-->
+    <!--<artifactId>javax.servlet-api</artifactId>-->
+    <!--<version>3.1.0</version>-->
+    <!--</dependency>-->
+
+
+    <!--<servlet>-->
+        <!--<servlet-name>LoginServlet</servlet-name>-->
+        <!--<servlet-class>com.hyp.blog.web.user.LoginServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet>-->
+        <!--<servlet-name>LogoutServlet</servlet-name>-->
+        <!--<servlet-class>com.hyp.blog.web.user.LogoutServlet</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>LoginServlet</servlet-name>-->
+        <!--<url-pattern>/login</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>LogoutServlet</servlet-name>-->
+        <!--<url-pattern>/logout</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+    <!--&lt;!&ndash; 过滤器配置信息 &ndash;&gt;-->
+    <!--<filter>-->
+        <!--<filter-name>CharacterEncodingFilter</filter-name>-->
+        <!--&lt;!&ndash; 过滤器设置编码文件 &ndash;&gt;-->
+        <!--<filter-class>-->
+            <!--com.hyp.blog.filter.CharacterFilter-->
+        <!--</filter-class>-->
+        <!--<init-param>-->
+            <!--&lt;!&ndash;-->
+             <!--init-param元素定义了过滤器的初始化参数-->
+             <!--&ndash;&gt;-->
+            <!--<description>给参数和值设置名称和编码类型</description>-->
+            <!--<param-name>encode</param-name>-->
+            <!--<param-value>GBK</param-value>-->
+        <!--</init-param>-->
+    <!--</filter>-->
+    <!--<filter>-->
+        <!--<filter-name>AuthFilter</filter-name>-->
+        <!--<filter-class>com.hyp.blog.filter.AuthFilter</filter-class>-->
+    <!--</filter>-->
+
+
+    <!--<filter-mapping>-->
+        <!--&lt;!&ndash;-->
+         <!--filter-mapping告诉容器所有与模式向匹配的请求都应该允许通过访问控制过滤器。-->
+         <!--所有访问都先通过过滤器文件过滤-->
+        <!--&ndash;&gt;-->
+        <!--<filter-name>CharacterEncodingFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+
+    <!--<filter-mapping>-->
+        <!--<filter-name>AuthFilter</filter-name>-->
+        <!--<url-pattern>/</url-pattern>-->
+    <!--</filter-mapping>-->
+
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <!--设置Session,单位分钟-->
+    <session-config>
+        <session-timeout>20</session-timeout>
+    </session-config>
+</web-app>
