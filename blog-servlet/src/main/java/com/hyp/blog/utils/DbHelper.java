@@ -84,7 +84,7 @@ public class DbHelper {
     public static <T> List<T> select(String sql, BeanListHandler<T> rsh, Object... vals) throws SQLException {
         Connection conn = DruidUtils.getConnection();
         QueryRunner qr = new QueryRunner();
-        List res = (List) qr.query(conn, sql, rsh, vals);
+        List res = qr.query(conn, sql, rsh, vals);
         DbUtils.closeQuietly(conn);
         return res;
     }
@@ -108,13 +108,17 @@ public class DbHelper {
     public static long count(String sql, Object... vals) throws SQLException {
         Connection conn = DruidUtils.getConnection();
         QueryRunner qr = new QueryRunner();
-        return qr.query(conn, sql, new ScalarHandler<Long>(), vals);
+        Long num = qr.query(conn, sql, new ScalarHandler<Long>(), vals);
+        DbUtils.closeQuietly(conn);
+        return num;
     }
 
     public static boolean exist(String sql, Object... vals) throws SQLException {
         Connection conn = DruidUtils.getConnection();
         QueryRunner qr = new QueryRunner();
-        return qr.query(conn, sql, new ScalarHandler<Boolean>(), vals);
+        Boolean ok = qr.query(conn, sql, new ScalarHandler<Boolean>(), vals);
+        DbUtils.closeQuietly(conn);
+        return ok;
     }
 
 

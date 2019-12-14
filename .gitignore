@@ -40,4 +40,5 @@ Desktop.ini
 ### Others ###
 *.log
 */log
+*/logs
 LOG_PATH_IS_UNDEFINED/

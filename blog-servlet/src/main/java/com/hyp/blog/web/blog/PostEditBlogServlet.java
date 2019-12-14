@@ -1,9 +1,12 @@
 package com.hyp.blog.web.blog;
 
 import com.hyp.blog.pojo.Article;
+import com.hyp.blog.pojo.Classify;
 import com.hyp.blog.pojo.User;
 import com.hyp.blog.service.ArticleService;
+import com.hyp.blog.service.ClassifyService;
 import com.hyp.blog.service.impl.ArticleServiceImpl;
+import com.hyp.blog.service.impl.ClassifyServiceImpl;
 import com.hyp.blog.utils.ConvertHelper;
 import com.hyp.blog.utils.SessionUtils;
 
@@ -21,6 +24,7 @@ import java.util.Objects;
 public class PostEditBlogServlet extends HttpServlet {
     private static final long serialVersionUID = -136961912199637006L;
     private ArticleService articleService = new ArticleServiceImpl();
+    private ClassifyService classifyService = new ClassifyServiceImpl();
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -31,32 +35,39 @@ public class PostEditBlogServlet extends HttpServlet {
         String content = request.getParameter("content");
         Long id = ConvertHelper.strToLong(request.getParameter("id"));
         Long categoryId = ConvertHelper.strToLong(request.getParameter("category"));
-        String categoryName = request.getParameter("categoryName");
 
+        Classify classify = null;
 
         int result = 0;
         String message = "";
 
-
-        if (id > 0) {
-            Article article = null;
+        if (categoryId > 0) {
             try {
-                article = articleService.findById(id);
+                classify = classifyService.findById(categoryId);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            if (Objects.nonNull(article)) {
-                article.setTitle(title);
-                article.setClzId(categoryId);
-                article.setClzName(categoryName);
-                article.setContext(content);
+            if (id > 0 && Objects.nonNull(classify)) {
+                Article article = null;
                 try {
-                    result = articleService.update(article);
+                    article = articleService.findById(id);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+                if (Objects.nonNull(article)) {
+                    article.setTitle(title);
+                    article.setClzId(classify.getId());
+                    article.setClzName(classify.getName());
+                    article.setContext(content);
+                    try {
+                        result = articleService.update(article);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
+
 
         if (result == 1) {
             message = "您修改成功了！";

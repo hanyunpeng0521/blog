@@ -24,7 +24,7 @@ public class ClassifyDAOImpl extends BaseDAO<Classify> implements ClassifyDAO {
     private String[] columns =
             new String[]{"name", "level", "user_id"};
     private String[] allColumns =
-            new String[]{"id", "name"};
+            new String[]{"id", "user_id", "name", "level", "is_deleted"};
 
 
     @Override

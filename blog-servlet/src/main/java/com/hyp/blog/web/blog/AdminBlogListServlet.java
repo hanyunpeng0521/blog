@@ -35,7 +35,7 @@ public class AdminBlogListServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        request.setAttribute("list", articles);
+        request.setAttribute("list", articles.getDates());
         request.getRequestDispatcher("/admin/adminBlogList.jsp").forward(request, response);
     }
 

@@ -13,6 +13,6 @@ import java.sql.SQLException;
  **/
 public interface UserDAO extends CommonBaseDAO<User, Long> {
 
-    public User findByName(String name) throws SQLException;
+    User findByName(String name) throws SQLException;
 
 }

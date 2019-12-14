@@ -5,6 +5,7 @@ import com.hyp.blog.dao.UserDAO;
 import com.hyp.blog.dao.impl.UserDAOImpl;
 import com.hyp.blog.pojo.User;
 import com.hyp.blog.service.UserService;
+import org.apache.commons.lang3.StringUtils;
 
 import java.sql.SQLException;
 import java.util.Objects;
@@ -46,12 +47,19 @@ public class UserServiceImpl extends BaseServiceImpl<User, Long> implements User
 
     @Override
     public User login(User user) throws SQLException {
+        User res = null;
         if (Objects.isNull(user)
                 || Objects.isNull(user.getName())
                 || Objects.isNull(user.getPasswd())) {
-            return null;
+            return res;
         }
-        return userDAO.findByName(user.getName());
+        User find = userDAO.findByName(user.getName());
+        if (Objects.nonNull(find) &&
+                StringUtils.equals(find.getPasswd(), user.getPasswd())) {
+            res = find;
+        }
+
+        return res;
 
     }
 }

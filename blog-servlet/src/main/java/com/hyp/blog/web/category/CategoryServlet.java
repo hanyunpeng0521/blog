@@ -143,7 +143,7 @@ public class CategoryServlet extends HttpServlet {
             }
 
         }
-        request.getRequestDispatcher("/servlet/CategoryServlet?method=list")
+        request.getRequestDispatcher("category?method=list")
                 .forward(request, response);
     }
 

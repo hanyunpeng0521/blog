@@ -47,7 +47,7 @@ public class SessionUtils {
         if (user == null) {
             // Session中没有用户信息,从Cookie中获取
             Cookie[] cookies = req.getCookies();
-            Cookie cookie = CookieUtils.findCookie(cookies, "autoLogin");
+            Cookie cookie = CookieUtils.findCookie(cookies, SessionUtils.AUTOLOGIN);
             // System.out.println(cookie.getValue());
             // 查看cookie中是否有用户信息
             if (cookie != null) {
@@ -94,7 +94,7 @@ public class SessionUtils {
         //1.用户注销
         session.removeAttribute(ACCOUNT);
         //2.从客户端删除自动登录的cookie
-        Cookie cookie = new Cookie("autologin", "msg");
+        Cookie cookie = new Cookie(SessionUtils.AUTOLOGIN, "msg");
         cookie.setPath(req.getContextPath());
         cookie.setMaxAge(0);
         response.addCookie(cookie);

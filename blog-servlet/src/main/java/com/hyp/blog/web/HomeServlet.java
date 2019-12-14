@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -60,7 +61,7 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(request.getParameter("id"));
         Article article = null;
-        List<Comment> comments = null;
+        List<Comment> comments = new ArrayList<>();
         // 根据博文的id值读取一篇博文
         try {
             article = articleService.findById(id);
@@ -84,15 +85,19 @@ public class HomeServlet extends HttpServlet {
     public void main(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         Long cid = ConvertHelper.strToLong(request.getParameter("cid"));
+        Integer pn = ConvertHelper.strToInt(request.getParameter("pn"));
         Page blogs = null;
         List<Classify> classifys = null;
         Page comments = null;
 
+        if (Objects.isNull(pn) || pn < 1) {
+            pn = 1;
+        }
         // 查询最近博客
         if (Objects.nonNull(cid) && cid > 0) {
-            blogs = articleService.findByCId(cid, 1, 5);
+            blogs = articleService.findByCId(cid, pn, 5);
         } else {
-            blogs = articleService.getAll(1, 5);
+            blogs = articleService.getAll(pn, 5);
         }
 
         // 查询分类
@@ -102,10 +107,10 @@ public class HomeServlet extends HttpServlet {
         comments = commentService.getAll(1, 5);
 
         // 读取首页需要显示的博文
-        request.setAttribute("blogs", blogs);
+        request.setAttribute("blogs", blogs.getDates());
         // 读取首页需要显示的分类信息
         request.setAttribute("categorys", classifys);
         // 读取首页需要显示的评论
-        request.setAttribute("comments", comments);
+        request.setAttribute("comments", comments.getDates());
     }
 }

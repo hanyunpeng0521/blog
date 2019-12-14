@@ -5,20 +5,20 @@
 <% Classify category = (Classify) request.getAttribute("category");%>
 
 <h2>修改分类</h2>
-<form id="form1" name="form1" method="post" action="/blog/servlet/CategoryServlet">
+<form id="form1" name="form1" method="post" action="category">
     <input type="hidden" name="id" value="<%=category.getId() %>"/>
     <input type="hidden" name="method" value="update"/>
     <table id="tab">
         <tr>
             <td>分类名称:</td>
             <td>
-                <input name="name" type="text" id="title" size="20" value="<%=category.getName()%>"/>
+                <input name="name" type="text" id="title1" size="20" value="<%=category.getName()%>"/>
             </td>
         </tr>
         <tr>
             <td>显示顺序:</td>
             <td>
-                <input name="level" type="text" id="title" size="2" maxlength="2" value="<%=category.getLevel()%>"/>
+                <input name="level" type="text" id="title2" size="2" maxlength="2" value="<%=category.getLevel()%>"/>
             </td>
         </tr>
 

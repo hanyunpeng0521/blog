@@ -24,6 +24,11 @@ public class PreAddBlogServlet extends HttpServlet {
     private ClassifyService classifyService = new ClassifyServiceImpl();
 
     @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         list(request, response);

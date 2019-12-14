@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+
 @WebServlet(name = "GetBlogServlet",
         urlPatterns = "/blog/get")
 public class GetBlogServlet extends HttpServlet {

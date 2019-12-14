@@ -4,7 +4,7 @@
 <head>
     <%
         String path = request.getContextPath();
-        String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+        String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/admin";
     %>
     <base href="<%=basePath%>">
     <title></title>
@@ -14,12 +14,15 @@
 <body>
 <div id="container">
     <div id="banner">
-        <h1>老刘的博客</h1>
+        <h1>平心的博客</h1>
     </div>
     <div id="menu">
     </div>
     <br/>
     <div id="main">
+        <%
+            out.print(basePath);
+        %>
 
         <% String message = (String) request.getAttribute("message");
             if (message != null) {
@@ -28,6 +31,7 @@
         %>
         <form id="form1" name="form1" method="post" action="user/login">
             <input type="hidden" name="method" value="login"/>
+            <input type="hidden" name="autologin" value="3600">
             <table width="331" height="84" border="0">
                 <tr>
                     <td>用户名：</td>

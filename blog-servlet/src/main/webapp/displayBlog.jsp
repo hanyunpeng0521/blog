@@ -113,7 +113,7 @@
     <div id="right">
         <div class="sidebar">
             <ul>
-                <li>刘伟自己的博客，欢迎大家访问！</li>
+                <li>自己的博客，欢迎大家访问！</li>
             </ul>
 
             <h2>分类</h2>

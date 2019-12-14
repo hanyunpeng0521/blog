@@ -30,7 +30,7 @@ import static com.hyp.blog.utils.SessionUtils.getAccount;
  **/
 @WebFilter(
         filterName = "AuthFilter",
-        urlPatterns = {"/*"}
+        urlPatterns = {"/blog/*", "/user/cp", "/user/logout"}
 )
 public class AuthFilter implements Filter {
 
@@ -67,7 +67,7 @@ public class AuthFilter implements Filter {
             // 有用户信息,放行
             chain.doFilter(req, response);
         } else {
-            response.sendRedirect(request.getContextPath() + "/blog/admin/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/admin/login.jsp");
         }
     }
 

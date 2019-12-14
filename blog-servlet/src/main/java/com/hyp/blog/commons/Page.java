@@ -20,11 +20,6 @@ public class Page {
     }
 
 
-    public static Page of(Long totalCount, int pageNo, int pageSize, List dates) {
-        return new Page(totalCount, pageNo, pageSize, dates);
-    }
-
-
     public Page(Long totalCount, int pageNo, int pageSize, List dates) {//数据总数,当前页码,每页显示条数，分页记录集
         this.totalCount = totalCount;
         this.pageNo = pageNo;
@@ -35,6 +30,10 @@ public class Page {
         } else {
             this.totalPages = (int) (this.totalCount / this.pageSize) + 1;
         }
+    }
+
+    public static Page of(Long totalCount, int pageNo, int pageSize, List dates) {
+        return new Page(totalCount, pageNo, pageSize, dates);
     }
 
     public boolean hasFirst() {  //有首页

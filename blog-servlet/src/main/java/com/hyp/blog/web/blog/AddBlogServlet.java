@@ -1,9 +1,12 @@
 package com.hyp.blog.web.blog;
 
 import com.hyp.blog.pojo.Article;
+import com.hyp.blog.pojo.Classify;
 import com.hyp.blog.pojo.User;
 import com.hyp.blog.service.ArticleService;
+import com.hyp.blog.service.ClassifyService;
 import com.hyp.blog.service.impl.ArticleServiceImpl;
+import com.hyp.blog.service.impl.ClassifyServiceImpl;
 import com.hyp.blog.utils.SessionUtils;
 
 import javax.servlet.ServletException;
@@ -20,6 +23,8 @@ public class AddBlogServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private ArticleService articleService = new ArticleServiceImpl();
+
+    private ClassifyService classifyService = new ClassifyServiceImpl();
 
     @Override
     public void init() throws ServletException {
@@ -42,16 +47,24 @@ public class AddBlogServlet extends HttpServlet {
         String title = request.getParameter("title");
         String content = request.getParameter("content");
         Long categoryId = Long.valueOf(request.getParameter("category"));
-        String categoryName = request.getParameter("categoryName");
-
-        Article article = new Article(title, content, user.getId(), user.getName(), categoryId, categoryName);
-
+        Classify classify = null;
         long result = -1;
-        try {
-            result = articleService.save(article);
-        } catch (SQLException e) {
-            e.printStackTrace();
+
+        if (categoryId > 0) {
+            try {
+                classify = classifyService.findById(categoryId);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            Article article = new Article(title, content, user.getId(), user.getName(), classify.getId(), classify.getName());
+
+            try {
+                result = articleService.save(article);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+
 
         String message = "";
         if (result > 0) {

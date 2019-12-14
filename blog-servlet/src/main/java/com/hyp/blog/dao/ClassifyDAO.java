@@ -13,7 +13,8 @@ import java.util.List;
  * hyp create at 19-12-11
  **/
 public interface ClassifyDAO extends CommonBaseDAO<Classify, Long> {
-    public List<Classify> findByUId(Long uid) throws SQLException;
-    public Classify findByUIdAndName(Long uid,String name) throws SQLException;
+    List<Classify> findByUId(Long uid) throws SQLException;
+
+    Classify findByUIdAndName(Long uid, String name) throws SQLException;
 
 }

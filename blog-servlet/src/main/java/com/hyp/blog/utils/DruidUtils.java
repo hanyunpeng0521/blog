@@ -4,6 +4,7 @@ package com.hyp.blog.utils;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 import javax.sql.DataSource;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -17,6 +18,27 @@ import java.util.Properties;
  **/
 public class DruidUtils {
     private static volatile DruidUtils INSTANCE;
+    private DataSource ds = null;
+
+    private DruidUtils() {
+        Properties properties = new Properties();
+        String path = DruidUtils.class.getClassLoader().getResource("/db.properties").getPath();
+        System.out.println(path);
+        try {
+            properties.load(new FileInputStream(path));
+
+//            properties.load(ClassLoader.getSystemResourceAsStream("db.properties"));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            ds = DruidDataSourceFactory.createDataSource(properties);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(ds);
+    }
 
     public static DruidUtils getINSTANCE() {
         if (null == INSTANCE) {
@@ -27,23 +49,6 @@ public class DruidUtils {
             }
         }
         return INSTANCE;
-    }
-
-    private DataSource ds = null;
-
-    private DruidUtils() {
-        Properties properties = new Properties();
-        try {
-            properties.load(ClassLoader.getSystemResourceAsStream("db.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            ds = DruidDataSourceFactory.createDataSource(properties);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println(ds);
     }
 
     /**

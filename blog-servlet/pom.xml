@@ -76,6 +76,13 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>3.1.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/displaytag/displaytag -->
+            <dependency>
+                <groupId>displaytag</groupId>
+                <artifactId>displaytag</artifactId>
+                <version>1.2</version>
             </dependency>
 
 
@@ -126,7 +133,20 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
+            <scope>provided</scope>
         </dependency>
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/displaytag/displaytag &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>displaytag</groupId>-->
+            <!--<artifactId>displaytag</artifactId>-->
+            <!--<version>1.2</version>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.slf4j</groupId>-->
+                    <!--<artifactId>slf4j-log4j12</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
 
     </dependencies>
 
@@ -148,6 +168,7 @@
                     </webApp>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 

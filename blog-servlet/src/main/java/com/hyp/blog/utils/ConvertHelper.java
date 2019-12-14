@@ -397,7 +397,7 @@ public class ConvertHelper {
         if (list == null || list.size() == 0) {
             return null;
         }
-        return (String[]) list.toArray(new String[list.size()]);
+        return list.toArray(new String[list.size()]);
     }
 
 }

@@ -102,6 +102,8 @@ APP功能开发完成之后，测试人员会对整项目进行系统性测试�
 
    测试工具：Postman+jmeter
    
+   主要技术：Java SE、JSP、Servlet、Tomcat、MySQL、PowerDesigner、starUML、Dreamweaver、数据库连接池、Commons DbUtils、JSTL、Displaytag、HTML、Javascript、CSS等技术和工具。
+   
    缺点与改进：
    
    - 实体类重复操作且修改复杂：使用lombok注释
@@ -109,6 +111,8 @@ APP功能开发完成之后，测试人员会对整项目进行系统性测试�
    - DAO层代码冗余：使用ORM框架
    - 实体之间的外键需要建立专门的查询方法:使用ORM框架
    - 日志配置复杂：使用AOP，未加入系统的syslog
+   
+   参考：<https://www.bilibili.com/video/av45035824>
    
 2. 开发环境（第二版SSM）
    

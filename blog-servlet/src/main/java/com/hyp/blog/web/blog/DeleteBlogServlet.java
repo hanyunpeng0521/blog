@@ -12,11 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+
 @WebServlet(name = "DeleteBlogServlet",
         urlPatterns = "/blog/delete")
 public class DeleteBlogServlet extends HttpServlet {
     private static final long serialVersionUID = 7339499832960257436L;
     private ArticleService articleService = new ArticleServiceImpl();
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,7 +35,9 @@ public class DeleteBlogServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.getRequestDispatcher("/servlet/AdminBlogListServlet")
+//        request.setAttribute("page", 1);
+//        request.setAttribute("size", 100);
+        request.getRequestDispatcher("/blog/list?page=1&size=100")
                 .forward(request, response);
     }
 }

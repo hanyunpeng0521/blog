@@ -14,16 +14,16 @@ import java.util.List;
 public interface CommonBaseDAO<T, K> {
 
 
-    public K insert(T t) throws SQLException;
+    K insert(T t) throws SQLException;
 
-    public int update(T t) throws SQLException;
+    int update(T t) throws SQLException;
 
-    public int delete(K k) throws SQLException;
+    int delete(K k) throws SQLException;
 
-    public T findById(K k) throws SQLException;
+    T findById(K k) throws SQLException;
 
-    public List<T> findAll() throws SQLException;
+    List<T> findAll() throws SQLException;
 
-    public Page findAll(Integer page, Integer size) throws SQLException;
+    Page findAll(Integer page, Integer size) throws SQLException;
 
 }

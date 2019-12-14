@@ -15,9 +15,7 @@ public enum Status {
     /**
      *
      */
-    DELETED(1, "删除")
-
-    ,VISITOR(-2,"游客");
+    DELETED(1, "删除"), VISITOR(-2, "游客");
 
     private int code;
     private String desc;

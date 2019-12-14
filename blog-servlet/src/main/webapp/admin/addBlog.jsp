@@ -1,24 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@include file="header.jsp" %>
+<base href="<%=basePath%>">
 <%@ page import="com.hyp.blog.pojo.Classify" %>
 <%@ page import="java.util.List" %>
 
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-<script type="text/javascript">
-    window.onload = function () {
-        var oFCKeditor = new FCKeditor('content');
-        oFCKeditor.BasePath = "/blog/ckeditor/";
-        oFCKeditor.ToolbarSet = 'Default';
-        oFCKeditor.Height = 400;
-        oFCKeditor.ReplaceTextarea();
-    }
-</script>
+<script type="text/javascript" src="./admin/ckeditor/ckeditor.js"></script>
+<%--<script type="text/javascript">--%>
+<%--window.onload = function () {--%>
+<%--var oFCKeditor = new FCKeditor('content');--%>
+<%--oFCKeditor.BasePath = "./admin/ckeditor/";--%>
+<%--oFCKeditor.ToolbarSet = 'Default';--%>
+<%--oFCKeditor.Height = 400;--%>
+<%--oFCKeditor.ReplaceTextarea();--%>
+<%--}--%>
+<%--</script>--%>
 
 <h2>
     发博文</h2>
 
 
-<form id="form1" name="form1" method="post" action="/blog/servlet/AddBlogServlet">
+<form id="form1" name="form1" method="post" action="blog/add">
     <table id="tab">
         <tr>
             <td>主题:</td>
@@ -47,7 +48,7 @@
 
         <tr>
             <td colspan="2">内容: <br/>
-                <textarea name="content" cols="100" rows="18" id="content"></textarea>
+                <textarea name="content" class="ckeditor" cols="100" rows="18" id="content"></textarea>
             </td>
         </tr>
 

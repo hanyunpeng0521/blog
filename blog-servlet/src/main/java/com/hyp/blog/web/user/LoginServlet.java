@@ -19,8 +19,9 @@ import java.util.Objects;
 
 /**
  * 免登陆：https://img-blog.csdn.net/20180902013308695?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21vc2hlbmdyZW5oZXJl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70
- *
+ * <p>
  * 登录界面将表单数据提交给LoginServlet处理，并把获取的数据保存到Cookie对象中去。
+ *
  * @author hyp
  * Project name is blog
  * Include in ${PACKAGE_NAME}
@@ -71,16 +72,16 @@ public class LoginServlet extends HttpServlet {
             if (autoLogin != null) {
                 //5.注意 cookie 中的密码要加密
                 Cookie cookie = new Cookie(SessionUtils.AUTOLOGIN, username + "-"
-                        + password);
+                        + DESUtil.getEncryptString(password));
                 cookie.setMaxAge(Integer.parseInt(autoLogin));
                 cookie.setPath(request.getContextPath());
                 response.addCookie(cookie);
             }
             //6.跳转至首页
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/admin/index.jsp");
         } else {
             request.setAttribute("errerMsg", "用户名或密码错");
-            request.getRequestDispatcher("/login.jsp")
+            request.getRequestDispatcher("/admin/login.jsp")
                     .forward(request, response);
         }
     }

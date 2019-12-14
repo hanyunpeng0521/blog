@@ -22,17 +22,15 @@ import java.util.Objects;
  * hyp create at 19-12-11
  **/
 public class UserDAOImpl extends BaseDAO<User> implements UserDAO {
-    @Override
-    public String getTableName() {
-        return "user";
-    }
-
-
     private String[] columns =
             new String[]{"name", "passwd", "birthday"};
     private String[] allColumns =
             new String[]{"id", "name", "passwd", "birthday", "is_deleted", "create_time"};
 
+    @Override
+    public String getTableName() {
+        return "user";
+    }
 
     @Override
     public Long insert(User user) throws SQLException {
@@ -97,7 +95,22 @@ public class UserDAOImpl extends BaseDAO<User> implements UserDAO {
                 , "id asc", Status.DELETED.getCode());
     }
 
-//    public static void main(String[] args) throws Exception {
+
+    @Override
+    public User findByName(String name) throws SQLException {
+        if (StringUtils.isEmpty(name)) {
+            return null;
+        }
+        return super.query(allColumns, "name = ? and is_deleted != ?",
+                new BeanHandler<User>(User.class,
+                        new BasicRowProcessor(new GenerousBeanProcessor()))
+                , name, Status.DELETED.getCode());
+    }
+
+//        public static void main(String[] args) throws Exception {
+//
+//        UserDAO dao=new UserDAOImpl();
+//            System.out.println(dao.findByName("pingxin"));
 //        User user = new User(
 //                "pingxin",
 //                "12346",
@@ -112,17 +125,6 @@ public class UserDAOImpl extends BaseDAO<User> implements UserDAO {
 //        System.out.println(userDao.findAll(1, 10));
 //        userDao.delete(id);
 //        System.out.println(userDao.findAll(1, 10));
-//
-//    }
 
-    @Override
-    public User findByName(String name) throws SQLException {
-        if (StringUtils.isNotBlank(name)) {
-            return null;
-        }
-        return super.query(allColumns, "name=? and is_deleted != ?",
-                new BeanHandler<User>(User.class,
-                        new BasicRowProcessor(new GenerousBeanProcessor()))
-                , name, Status.DELETED.getCode());
-    }
+//    }
 }

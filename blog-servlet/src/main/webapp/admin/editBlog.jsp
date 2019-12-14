@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@include file="header.jsp" %>
+<base href="<%=basePath%>">
+
 <%@ page import="com.hyp.blog.pojo.Article" %>
 <%@ page import="com.hyp.blog.pojo.Classify" %>
 <%@ page import="java.util.List" %>
 
-<script type="text/javascript" src="/blog/admin/fckeditor/fckeditor.js"></script>
+<script type="text/javascript" src="./admin/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
     window.onload = function () {
         var oFCKeditor = new FCKeditor('content');
-        oFCKeditor.BasePath = "/blog/admin/fckeditor/";
+        oFCKeditor.BasePath = basePath + "/ckeditor/";
         oFCKeditor.ToolbarSet = 'Default';
         oFCKeditor.Height = 400;
         oFCKeditor.ReplaceTextarea();
@@ -19,7 +21,7 @@
 
 
 <h2>修改博文</h2>
-<form id="form1" name="form1" method="post" action="/blog/servlet/PostEditBlogServlet">
+<form id="form1" name="form1" method="post" action="blog/edit/post">
     <input type="hidden" name="id" value="<%=blog.getId() %>"/>
 
     <table id="tab">
@@ -39,7 +41,7 @@
                         long oldcid = blog.getClzId();
                         for (int i = 0; i < categorys.size(); i++) {
                             Classify c = (Classify) categorys.get(i);
-                            if (c.getId()==oldcid) {
+                            if (c.getId() == oldcid) {
                     %>
                     <option value="<%=c.getId() %>" selected><%=c.getName()%>
                     </option>

@@ -84,7 +84,7 @@ public class CommentServlet extends HttpServlet {
         }
 
 
-        response.sendRedirect("/blog/servlet/HomeServlet?method=get&id=" + blogId);
+        response.sendRedirect("home?method=get&id=" + blogId);
     }
 
     public void list(HttpServletRequest request, HttpServletResponse response)

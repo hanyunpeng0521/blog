@@ -94,12 +94,14 @@ public class DESUtil {
         }
     }
 
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        //加密
 //        logger.info(getEncryptString("root"));//WnplV/ietfQ=
 //        logger.info(getEncryptString("123456"));//QAHlVoUc49w=
 //        //解密
 //        logger.info(getDecryptString(getEncryptString("root")));//root
 //        logger.info(getDecryptString(getEncryptString("123456")));//123456
-//    }
+
+        System.out.println(getEncryptString("123456"));
+    }
 }

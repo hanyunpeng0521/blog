@@ -13,5 +13,5 @@ import java.util.List;
  * hyp create at 19-12-12
  **/
 public interface CommentDAO extends CommonBaseDAO<Comment, Long> {
-    public List<Comment> findByAId(Long aId) throws SQLException;
+    List<Comment> findByAId(Long aId) throws SQLException;
 }

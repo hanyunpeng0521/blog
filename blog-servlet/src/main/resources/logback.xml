@@ -34,7 +34,7 @@
         </encoder>
     </appender>
 
-    <root level="WARN">
+    <root level="INFO">
         <appender-ref ref="console"/>
         <appender-ref ref="rollingFile"/>
     </root>

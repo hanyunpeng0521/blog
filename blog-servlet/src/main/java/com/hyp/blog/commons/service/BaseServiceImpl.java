@@ -2,7 +2,6 @@ package com.hyp.blog.commons.service;
 
 import com.hyp.blog.commons.Page;
 import com.hyp.blog.commons.dao.CommonBaseDAO;
-import com.hyp.blog.commons.service.BaseService;
 
 import java.sql.SQLException;
 import java.util.List;
