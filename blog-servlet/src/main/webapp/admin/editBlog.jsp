@@ -7,15 +7,15 @@
 <%@ page import="java.util.List" %>
 
 <script type="text/javascript" src="./admin/ckeditor/ckeditor.js"></script>
-<script type="text/javascript">
-    window.onload = function () {
-        var oFCKeditor = new FCKeditor('content');
-        oFCKeditor.BasePath = basePath + "/ckeditor/";
-        oFCKeditor.ToolbarSet = 'Default';
-        oFCKeditor.Height = 400;
-        oFCKeditor.ReplaceTextarea();
-    }
-</script>
+<%--<script type="text/javascript">--%>
+<%--window.onload = function () {--%>
+<%--var oFCKeditor = new FCKeditor('content');--%>
+<%--oFCKeditor.BasePath = basePath + "/ckeditor/";--%>
+<%--oFCKeditor.ToolbarSet = 'Default';--%>
+<%--oFCKeditor.Height = 400;--%>
+<%--oFCKeditor.ReplaceTextarea();--%>
+<%--}--%>
+<%--</script>--%>
 
 <% Article blog = (Article) request.getAttribute("blog");%>
 
@@ -59,7 +59,8 @@
 
         <tr>
             <td colspan="2">内容: <br/>
-                <textarea name="content" cols="60" rows="18" id="content"><%=blog.getContext()%></textarea>
+                <textarea name="content" class="ckeditor" cols="60" rows="18"
+                          id="content"><%=blog.getContext()%></textarea>
             </td>
         </tr>
 

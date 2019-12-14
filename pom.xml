@@ -7,6 +7,7 @@
     <groupId>com.hyp.learn</groupId>
     <artifactId>blog</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>blog-servlet</module>

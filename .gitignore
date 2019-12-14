@@ -38,6 +38,7 @@ ehthumbs.db
 Desktop.ini
 
 ### Others ###
+.attach_pid*
 *.log
 */log
 */logs

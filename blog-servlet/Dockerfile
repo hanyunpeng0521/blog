@@ -9,11 +9,27 @@ MAINTAINER pingxin
 LABEL app="blog" version="0.0.1" by="pingxin"
 WORKDIR /usr/local
 RUN rm -rf /usr/local/tomcat/webapps/*
-COPY ./target/blog-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY ./target/blog-servlet-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
 #时区同步
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+
+##Jetty
+#FROM jetty:9-jre8-alpine
+#MAINTAINER pingxin
+#LABEL app="blog" version="0.0.1" by="pingxin"
+#WORKDIR /usr/local
+#RUN rm -rf /usr/local/jetty/start.jar
+#COPY ./target/blog-servlet-1.0-SNAPSHOT.war /usr/local/jetty/start.jar
+#
+##时区同步
+#ENV TZ=Asia/Shanghai
+#RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+
+
 
 
 #容器启动正常,当然取决于你的war包是否是正常，
@@ -24,10 +40,3 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #运行
 # docker run --name blog -p 8080:8080 -d pingxin/blog:1.0
 
-
-#使用mvn jetty:run,这就需要使用源码，在项目目录下运行
-#可以采用同步文件夹的方法，或者使用git等方法
-
-#FROM maven:3.6.3-jdk-8-slim
-#MAINTAINER pingxin
-#LABEL app="blog" version="0.0.1" by="pingxin"
