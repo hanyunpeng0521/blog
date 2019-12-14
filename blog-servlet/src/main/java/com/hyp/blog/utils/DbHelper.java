@@ -84,7 +84,7 @@ public class DbHelper {
     public static <T> List<T> select(String sql, BeanListHandler<T> rsh, Object... vals) throws SQLException {
         Connection conn = DruidUtils.getConnection();
         QueryRunner qr = new QueryRunner();
-        List res = qr.query(conn, sql, rsh, vals);
+        List<T> res = qr.query(conn, sql, rsh, vals);
         DbUtils.closeQuietly(conn);
         return res;
     }

@@ -2,13 +2,14 @@ package com.hyp.blog.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import java.security.Key;
 import java.security.SecureRandom;
+import java.util.Base64;
+import java.util.Base64.Decoder;
+import java.util.Base64.Encoder;
 
 /**
  * @author hyp
@@ -52,7 +53,7 @@ public class DESUtil {
      */
     public static String getEncryptString(String str) {
         //基于BASE64编码，接收byte[]并转换成String
-        BASE64Encoder base64Encoder = new BASE64Encoder();
+        Encoder encoder = Base64.getEncoder();
         try {
             // 按UTF8编码
             byte[] bytes = str.getBytes(CHARSETNAME);
@@ -63,7 +64,7 @@ public class DESUtil {
             // 加密
             byte[] doFinal = cipher.doFinal(bytes);
             // byte[]to encode好的String并返回
-            return base64Encoder.encode(doFinal);
+            return encoder.encodeToString(doFinal);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -77,10 +78,11 @@ public class DESUtil {
      */
     public static String getDecryptString(String str) {
         // 基于BASE64编码，接收byte[]并转换成String
-        BASE64Decoder base64decoder = new BASE64Decoder();
+        Decoder decoder = Base64.getDecoder();
+
         try {
             // 将字符串decode成byte[]
-            byte[] bytes = base64decoder.decodeBuffer(str);
+            byte[] bytes = decoder.decode(str);
             // 获取解密对象
             Cipher cipher = Cipher.getInstance(ALGORITHM);
             // 初始化解密信息
@@ -94,14 +96,4 @@ public class DESUtil {
         }
     }
 
-    public static void main(String[] args) {
-//        //加密
-//        logger.info(getEncryptString("root"));//WnplV/ietfQ=
-//        logger.info(getEncryptString("123456"));//QAHlVoUc49w=
-//        //解密
-//        logger.info(getDecryptString(getEncryptString("root")));//root
-//        logger.info(getDecryptString(getEncryptString("123456")));//123456
-
-        System.out.println(getEncryptString("123456"));
-    }
 }
