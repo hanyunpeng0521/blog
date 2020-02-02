@@ -512,5 +512,71 @@
    
    ```
 
-   
+具体项目内容参考：<https://github.com/hanyunpeng0521/blog/tree/master/blog-sb>
+
+#### 页面处理
+
+**1、静态页面导入project**
+
+**2、thymeleaf布局**
+
+*  定义fragment
+*  使用fragment布局
+
+**3、错误页面美化**
+
+4、设计与规范
+
+#### 实体设计
+
+**实体类：**
+
+*  博客 Blog
+*  博客分类 Type
+*  博客标签 Tag
+*  博客评论 Comment
+*  用户 User
+
+**实体关系：**
+
+![1NSAJI.png](https://s2.ax1x.com/2020/02/02/1NSAJI.png)
+
+**评论类自关联关系：**
+
+![1NSQoj.png](https://s2.ax1x.com/2020/02/02/1NSQoj.png)
+
+**Blog类：**
+
+![1NS8Wq.png](https://s2.ax1x.com/2020/02/02/1NS8Wq.png)
+
+**Type类：**
+
+![1NStyT.png](https://s2.ax1x.com/2020/02/02/1NStyT.png)
+
+**Tag类：**
+
+![1NSTpt.png](https://s2.ax1x.com/2020/02/02/1NSTpt.png)
+
+**Comment类：**
+
+![1NSX7Q.png](https://s2.ax1x.com/2020/02/02/1NSX7Q.png)
+
+**User类：**
+
+![1Npu1x.png](https://s2.ax1x.com/2020/02/02/1Npu1x.png)
+
+#### 应用分层
+
+![1N9F2t.png](https://s2.ax1x.com/2020/02/02/1N9F2t.png)
+
+#### 命名约定
+
+**Service/DAO层命名约定：**
+
+*  获取单个对象的方法用get做前缀。
+*  获取多个对象的方法用list做前缀。
+*  获取统计值的方法用count做前缀。
+*  插入的方法用save(推荐)或insert做前缀。
+*  删除的方法用remove(推荐)或delete做前缀。
+*  修改的方法用update做前缀。
 
