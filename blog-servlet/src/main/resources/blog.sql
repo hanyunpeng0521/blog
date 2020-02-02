@@ -1,8 +1,7 @@
-DROP TABLE IF EXISTS `article`;
-
-DROP TABLE IF EXISTS `classify`;
 
 DROP TABLE IF EXISTS `comment`;
+DROP TABLE IF EXISTS `article`;
+DROP TABLE IF EXISTS `classify`;
 
 DROP TABLE IF EXISTS `user`;
 
