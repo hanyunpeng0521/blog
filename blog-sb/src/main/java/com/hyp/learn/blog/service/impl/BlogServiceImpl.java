@@ -110,7 +110,7 @@ public class BlogServiceImpl implements BlogService {
         List<String> years = blogRepository.findGroupYear();
         Map<String, List<Blog>> map = new HashMap<>();
         for (String year : years) {
-            map.put(year, blogRepository.findByYear(year));
+            map.put(year, blogRepository.findByYear(Integer.valueOf(year)));
         }
         return map;
     }
