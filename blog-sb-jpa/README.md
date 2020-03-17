@@ -24,11 +24,6 @@
 *  后端管理功能实现
 *  前端管理功能实现
 
-**你能学得什么？**
-
-*  基于Spring Boot的完整全栈式的开发套路
-*  Semantic UI框架的使用
-*  一套博客系统的源代码与设计
 
 ### 需求与功能
 
@@ -109,8 +104,6 @@
 [Semantic UI官网](https://semantic-ui.com/)
 
 [Semantic UI中文官网](http://www.semantic-ui.cn/)
-
-[WebStorm下载与破解](https://imcoding.me/blogs/5)
 
 [背景图片资源](https://www.toptal.com/designers/subtlepatterns/)
 

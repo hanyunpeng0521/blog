@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    #H2数据库
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:blog
+    username: sa
+    password: 123456
+    #数据库连接池
+    type: com.zaxxer.hikari.HikariDataSource
+    #指定数据库初始化文件
+    data: db/data.sql
+    schema: db/schema.sql
+  jpa:
+    hibernate:
+      #此时关闭数据库结构自动更新
+      ddl-auto: none
+      #输出SQL
+    show-sql: true
+  thymeleaf:
+    cache: false
+  #json时间格式
+  jackson:
+    date-format: com.fasterxml.jackson.databind.util.StdDateFormat
+
+#指定log
+logging:
+  level:
+    root: info
+    com.hyp.learn: debug
+
+#端口
+server:
+  port: 8010
+  servlet:
+    context-path: /blog

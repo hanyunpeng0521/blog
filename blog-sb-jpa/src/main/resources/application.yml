@@ -2,13 +2,20 @@ spring:
   thymeleaf:
     mode: HTML
     encoding: UTF-8
+  mvc:
+    favicon:
+      enabled: false
 
   profiles:
     active: dev
+
   application:
     name: blog-sb
+  #国际化配置
   messages:
     basename: i18n.message
+#默认头像
 comment:
   avatar: /images/avatar.png
+
 
