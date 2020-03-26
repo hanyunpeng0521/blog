@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    include: [center]
+  ####### database Config #######
+  datasource:
+    druid:
+      connection-init-sqls: set names utf8mb4
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/px_blog?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  ####### Redis Config #######
+  redis:
+    database: 2
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password:
+  ####### redis缓存服务配置 #######
+  session:
+    store-type: redis
+swagger2:
+  enable: true

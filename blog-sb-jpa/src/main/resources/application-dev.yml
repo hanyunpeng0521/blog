@@ -8,8 +8,8 @@ spring:
     #数据库连接池
     type: com.zaxxer.hikari.HikariDataSource
     #指定数据库初始化文件
-    data: db/data.sql
-    schema: db/schema.sql
+    data: classpath:db/data.sql
+    schema: classpath:db/schema.sql
   jpa:
     hibernate:
       #此时关闭数据库结构自动更新
@@ -31,5 +31,5 @@ logging:
 #端口
 server:
   port: 8010
-  servlet:
-    context-path: /blog
+#  servlet:
+#    context-path: /blog
