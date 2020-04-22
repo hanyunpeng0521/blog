@@ -8,7 +8,7 @@
     <groupId>com.hyp.learn</groupId>
     <artifactId>blog-sb-mb</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <modules>
         <module>core</module>
         <module>file</module>
@@ -51,7 +51,7 @@
             <dependency>
                 <groupId>com.hyp.learn</groupId>
                 <artifactId>core</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>

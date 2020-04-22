@@ -137,7 +137,7 @@
                            data-placement="bottom"><i class="fa fa-file-o fa-fw"></i>免责声明</a></li>
                 </ul>
                 </p>
-                <p>托管于<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=wylo59db"
+                <p>托管于<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html"
                          target="_blank" title="阿里云-为了无法计算的价值" data-toggle="tooltip" data-placement="bottom"
                          rel="external nofollow">阿里云</a> & <a href="https://portal.qiniu.com/signup" target="_blank"
                                                               title="七牛云-国内领先的企业级云服务商" data-toggle="tooltip"
@@ -207,6 +207,6 @@
         loginUserAvatar: '${user.avatar}'
     }
 </script>
-<script type="text/javascript" src="${config.staticWebSite}/js/zhyd.core.js"></script>
-<script type="text/javascript" src="${config.staticWebSite}/js/zhyd.comment.js"></script>
-<script type="text/javascript" src="${config.staticWebSite}/js/zhyd.js"></script>
+<script type="text/javascript" src="${config.staticWebSite}/js/px.core.js"></script>
+<script type="text/javascript" src="${config.staticWebSite}/js/px.comment.js"></script>
+<script type="text/javascript" src="${config.staticWebSite}/js/px.js"></script>

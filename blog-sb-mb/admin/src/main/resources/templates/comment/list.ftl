@@ -284,7 +284,7 @@
                                 $.alert.ajaxSuccess(json);
                                 $("#auditModal").modal('hide');
                                 table.refresh();
-                                zhyd.initCommentNotify();
+                                initCommentNotify();
                             },
                             error: $.alert.ajaxError
                         });

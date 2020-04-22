@@ -81,7 +81,7 @@
     </div>
 </@addOrUpdateMOdal>
 <@footer>
-    <script type="text/javascript" src="/assets/js/zhyd.treetable.js"></script>
+    <script type="text/javascript" src="/assets/js/treetable.js"></script>
     <script>
         /**
          * 操作按钮

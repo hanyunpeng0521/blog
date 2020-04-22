@@ -74,8 +74,8 @@
         }
     </style>
 </@header>
-<#-- 网站首页的项目介绍内容 -->
-<@aboutOneBlog></@aboutOneBlog>
+<#-- TODO 网站首页的项目介绍内容 -->
+<#--<@aboutOneBlog></@aboutOneBlog>-->
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 top_tiles">
         <#-- 文章 -->
@@ -285,7 +285,7 @@
 </div>
 <@footer>
     <script src="https://cdn.jsdelivr.net/npm/echarts@4.1.0/dist/echarts.min.js"></script>
-    <script src="/assets/js/zhyd.echarts.js"></script>
+    <script src="/assets/js/echarts.js"></script>
     <script>
         /* 顶部卡片统计 */
         $.post("/statistics/siteInfo", function (json) {
@@ -310,7 +310,7 @@
             $.alert.ajaxSuccess(json);
             if (json.status == 200) {
                 var jsonData = json.data;
-                zhyd.createChart({
+                px.createChart({
                     id: 'echart_type',
                     legendData: getNames(jsonData, 'name'),
                     series: {name: '分类文章数统计', type: 'pie', seriesData: jsonData}
@@ -323,7 +323,7 @@
             $.alert.ajaxSuccess(json);
             if (json.status == 200) {
                 var jsonData = json.data || [{name: '暂无', value: 0}];
-                zhyd.createChart({
+                px.createChart({
                     id: 'echart_spider',
                     legendData: getNames(jsonData, 'name'),
                     series: {name: '爬虫访问统计', type: 'pie', seriesData: jsonData}

@@ -1,11 +1,5 @@
-/**
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @version 1.0
- * @date 2018/5/21 11:05
- * @since 1.0
- */
-var zhyd = window.zhyd || {};
-zhyd.chartConfig = {
+var px = window.px || {};
+px.chartConfig = {
     color: ["#26B99A", "#34495E", "#BDC3C7", "#3498DB", "#9B59B6", "#8abb6f", "#759c6a", "#bfd3b7"],
     title: {
         itemGap: 8,
@@ -209,10 +203,10 @@ zhyd.chartConfig = {
         fontFamily: "Arial, Verdana, sans-serif"
     }
 };
-zhyd.createChart = function (options) {
+px.createChart = function (options) {
     var op = $.extend({
         id: '',
-        theme: zhyd.chartConfig,
+        theme: px.chartConfig,
         title: null,
         subtext: '',
         legendData: [],
@@ -253,7 +247,7 @@ zhyd.createChart = function (options) {
 function init_echarts() {
     if ("undefined" != typeof echarts) {
         if ($("#echart_line").length) {
-            var f = echarts.init(document.getElementById("echart_line"), zhyd.chartConfig);
+            var f = echarts.init(document.getElementById("echart_line"), px.chartConfig);
             f.setOption({
                 tooltip: {
                     trigger: "axis"

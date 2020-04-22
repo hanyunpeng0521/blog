@@ -2,7 +2,8 @@
 
 **个人博客功能：**
 
-![1tTNLt.png](https://s2.ax1x.com/2020/02/02/1tTNLt.png)
+![GaQzNj.png](https://s1.ax1x.com/2020/04/03/GaQzNj.png)
+
 
 **技术组合：**
 

@@ -1,11 +1,4 @@
-/**
- *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @website https://www.zhyd.me
- * @version 1.0
- * @date 2017-04-01
- * @since 1.0
- */
+
 
 // 动态切换浏览器窗口title https://zhangge.net/
 jQuery(document).ready(function () {
@@ -207,8 +200,8 @@ $(function () {
     initArticeMenu();
     initScrollMenu();
 
-    console.group("关于OneBlog");
-    console.log("OneBlog，一个简洁美观、功能强大并且自适应的Java博客\n欢迎进QQ交流群（190886500）");
+    console.group("关于PxBlog");
+    console.log("PxBlog，一个简洁美观、功能强大并且自适应的Java博客");
     console.groupEnd();
     console.log("%c生活真他妈好玩，因为生活老他妈玩我！", "color:green;font-size:20px;font-weight:blod");
     console.groupEnd();

@@ -525,11 +525,12 @@ VALUES ('96', '3', '49', now(), now());
 TRUNCATE TABLE `px_blog`.`sys_user`;
 -- 初始化系统用户
 INSERT INTO `px_blog`.`sys_user`
-VALUES (1, 'root', 'CGUx1FN++xS+4wNDFeN6DA==', '超级管理员', '15151551516', '843977358@qq.com', '843977358', NULL, NULL,
-        'https://static.zhyd.me/static/img/favicon.ico', 'ROOT', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL,
+VALUES (1, 'root', 'CGUx1FN++xS+4wNDFeN6DA==', '超级管理员', '138xxxxxxxx', '1670787xxx@qq.com', '1670787xxx', NULL, NULL,
+        'https://s2.ax1x.com/2020/02/11/1ovw6J.jpg', 'ROOT', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL,
         '0:0:0:0:0:0:0:1', '2019-06-01 11:59:23', 254, NULL, 1, now(), now());
 INSERT INTO `px_blog`.`sys_user`
-VALUES (2, 'admin', 'gXp2EbyZ+sB/A6QUMhiUJQ==', '管理员', '15151551516', '843977358@qq.com', '843977358', NULL, NULL, NULL,
+VALUES (2, 'admin', 'gXp2EbyZ+sB/A6QUMhiUJQ==', '管理员', '138xxxxxxxx', '1670787xxx@qq.com', '1670787xxx', NULL, NULL,
+        'https://s2.ax1x.com/2020/02/11/1ovw6J.jpg',
         'ADMIN', NULL, NULL, NULL, NULL, NULL, 1, 1, 0, 0, '0:0:0:0:0:0:0:1', '0:0:0:0:0:0:0:1', now(), 2, NULL, 1,
         now(), now());
 INSERT INTO `px_blog`.`sys_user`

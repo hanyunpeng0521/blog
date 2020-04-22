@@ -1,9 +1,4 @@
-/**
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @version 1.0
- * @date 2018/6/7 10:48
- * @since 1.0
- */
+
 var $publishForm = $("#publishForm");
 
 if (articleId) {

@@ -1,10 +1,4 @@
-/*jslint newcap: true */
-/*global inlineAttachment: false */
-/**
- * CodeMirror version for inlineAttachment
- *
- * Call inlineAttachment.attach(editor) to attach to a codemirror instance
- */
+
 (function () {
     'use strict';
 

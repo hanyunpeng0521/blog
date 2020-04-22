@@ -2,11 +2,6 @@
  *
  * 项目工具类
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @website https://www.zhyd.me
- * @version 1.0
- * @date 2017-09-02
- * @since 1.0
  */
 (function ($) {
     // 覆盖jquery-confirm中的函数
@@ -106,13 +101,13 @@
             material: {
                 _loadData: function (config, callback) {
                     $("#selectable").html(config.selectable), $("#selected").html(0);
-                    zhyd.mask.loading($(".material-body"), "加载中...");
+                    px.mask.loading($(".material-body"), "加载中...");
                     $.ajax({
                         url: "/file/list",
                         data: {pageNumber: config && config.pageNumber ? config.pageNumber : 1},
                         type: "POST",
                         success: function (json) {
-                            zhyd.mask.closeAll($(".material-body"));
+                            px.mask.closeAll($(".material-body"));
                             var $box = $(".list-file");
                             var tpl = '{{#list}}<li class="material-item" data-imgUrl="{{fullFilePath}}"><div style="position: relative;">' +
                                 '<div class="selected-mask mask-xs"><div class="inner"></div><div class="icon"></div></div>' +
@@ -195,7 +190,7 @@
                             callback && callback($box);
                         },
                         error: function () {
-                            zhyd.mask.closeAll($(".material-body"));
+                            px.mask.closeAll($(".material-body"));
                         }
                     })
                 },

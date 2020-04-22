@@ -85,7 +85,7 @@
         $("#div2").find(".w-e-text-container").css("height", "100px");
 
         // oneblog定制版的wangEditor
-        zhyd.wangEditor.init({
+        wangEditor.init({
             container: "#editor",
             textareaName: "content",
             uploadUrl: "/api/uploadFile",

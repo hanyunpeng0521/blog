@@ -1,8 +1,5 @@
 /**
  * bootstrapTreeTable
- * v0.0.1
- * @author swifly
- * @modify yadong.zhang
  *      修改data格式
  *      增加简单分页
  *      增加全选操作

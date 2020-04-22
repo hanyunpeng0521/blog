@@ -2,10 +2,6 @@
  *
  * bootstrap-table工具类
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @version 1.0
- * @date 2018-04-22
- * @since 1.0
  */
 function Table(options) {
     this.options = $.extend({

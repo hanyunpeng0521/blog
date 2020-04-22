@@ -1,10 +1,4 @@
-/*
-    Validator v1.1.0
-    (c) Yair Even Or
-    https://github.com/yairEO/validator
 
-    MIT-style license.
-*/
 
 var validator = (function ($) {
     var message, tests, checkField, validate, mark, unmark, field, minmax, defaults,

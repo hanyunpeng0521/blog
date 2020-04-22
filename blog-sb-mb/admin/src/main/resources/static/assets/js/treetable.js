@@ -1,8 +1,5 @@
 /**
  * 多级菜单
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @version 1.0
- * @date 2018/9/3 12:30
  */
 
 $.extend({

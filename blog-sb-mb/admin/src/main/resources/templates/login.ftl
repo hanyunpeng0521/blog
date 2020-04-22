@@ -12,7 +12,7 @@
           type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/jquery-confirm@3.3.2/dist/jquery-confirm.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" rel="stylesheet">
-    <link href="/assets/css/zhyd.core.css" rel="stylesheet">
+    <link href="/assets/css/core.css" rel="stylesheet">
 </head>
 
 <body class="login">
@@ -85,7 +85,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.0/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/jquery-confirm@3.3.2/dist/jquery-confirm.min.js"></script>
-<script src="/assets/js/zhyd.tool.js"></script>
+<script src="/assets/js/tool.js"></script>
 <script>
     $("#modal").modal('show');
     $(".btn-login").click(function () {

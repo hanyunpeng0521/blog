@@ -54,36 +54,36 @@ VALUES ('3', null, '其他文章', '记录网站建设以及日常工作、学�
 TRUNCATE TABLE `px_blog`.`sys_config`;
 -- 初始化系统配置
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (1, 'homeDesc', 'OneBlog是一款简洁美观、自适应的Java博客系统。使用springboot开发，前端使用Bootstrap。支持移动端自适应，配有完备的前台和后台管理功能。', now(),
+VALUES (1, 'homeDesc', 'PxBlog是一款简洁美观、自适应的Java博客系统。使用springboot开发，前端使用Bootstrap。支持移动端自适应，配有完备的前台和后台管理功能。', now(),
         now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (2, 'homeKeywords', 'OneBlog,开源博客', now(), now());
+VALUES (2, 'homeKeywords', 'PxBlog,开源博客', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (3, 'domain', 'zhyd.me', now(), now());
+VALUES (3, 'domain', 'hanyunpeng0521.github.io', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
 VALUES (4, 'cmsUrl', 'http://localhost:8085', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
 VALUES (5, 'siteUrl', 'http://localhost:8443', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (6, 'siteName', 'OneBlog开源博客', now(), now());
+VALUES (6, 'siteName', 'PxBlog开源博客', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (7, 'siteDesc', 'OneBlog是一款简洁美观、自适应的Java博客系统', now(), now());
+VALUES (7, 'siteDesc', 'PxBlog是一款简洁美观、自适应的Java博客系统', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
 VALUES (8, 'siteFavicon', 'http://localhost:8443/img/favicon.ico', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
 VALUES (9, 'staticWebSite', 'http://localhost:8443', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (10, 'authorName', '张亚东', now(), now());
+VALUES (10, 'authorName', '平心', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (11, 'authorEmail', 'yadong.zhang0415#gmail.com', now(), now());
+VALUES (11, 'authorEmail', 'm13839441583#163.com', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (12, 'wxCode', 'https://static.zhyd.me/static/img/wechat_account.jpg', now(), now());
+VALUES (12, 'wxCode', 'https://s1.ax1x.com/2020/03/23/8H4n3Q.png', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (13, 'qq', '843977358', now(), now());
+VALUES (13, 'qq', '1670787053', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (14, 'weibo', 'http://weibo.com/211230415', now(), now());
+VALUES (14, 'weibo', 'XXX', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (15, 'github', 'https://github.com/zhangyd-c', now(), now());
+VALUES (15, 'github', 'https://github.com/hanyunpeng0521', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
 VALUES (16, 'maintenance', '0', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
@@ -105,7 +105,7 @@ VALUES (24, 'wxPraiseCode', NULL, now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
 VALUES (25, 'zfbPraiseCode', NULL, now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (26, 'baiduApiAk', 'NwHaYlGalDEpgxm46xBaC3T9', now(), now());
+VALUES (26, 'baiduApiAk', NULL, now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
 VALUES (27, 'spiderConfig',
         '{\r\n            imooc: {\r\n                domain: \"www.imooc.com\",\r\n                titleRegex: \"//span[@class=js-title]/html()\",\r\n                authorRegex: \"//div[@class=name_con]/p[@class=name]/a[@class=nick]/html()\",\r\n                releaseDateRegex: \"//div[@class=\'dc-profile\']/div[@class=\'l\']/span[@class=\'spacer\']/text()\",\r\n                contentRegex: \"//div[@class=detail-content]/html()\",\r\n                targetLinksRegex: \"/article/[0-9]{1,10}\",\r\n                tagRegex: \"//div[@class=cat-box]/div[@class=cat-wrap]/a[@class=cat]/html()\",\r\n                header: [\r\n                    \"Host=www.imooc.com\",\r\n                    \"Referer=https://www.imooc.com\"\r\n                ],\r\n                entryUrls: \'https://www.imooc.com/u/{uid}/articles?page={curPage}\'\r\n            },\r\n            csdn: {\r\n                domain: \"blog.csdn.net\",\r\n                titleRegex: \"//h1[@class=title-article]/html()\",\r\n                authorRegex: \"//a[@class=follow-nickName]/html()\",\r\n                releaseDateRegex: \"//div[@class=\'article-bar-top\']/span[@class=\'time\']/text()\",\r\n                contentRegex: \"//div[@class=article_content]/html()\",\r\n                targetLinksRegex: \".*blog\\\\.csdn\\\\.net/{uid}/article/details/[0-9a-zA-Z]{1,15}\",\r\n                tagRegex: \"//span[@class=artic-tag-box]/a[@class=tag-link]/html()\",\r\n                header: [\r\n                    \"Host=blog.csdn.net\",\r\n                    \"Referer=https://blog.csdn.net/{uid}/article/list/1\"\r\n                ],\r\n                entryUrls: \'https://blog.csdn.net/{uid}/article/list/{curPage}\'\r\n            },\r\n            iteye: {\r\n                domain: \"{uid}.iteye.com\",\r\n                titleRegex: \"//div[@class=blog_title]/h3/a/html()\",\r\n                authorRegex: \"//div[@id=blog_owner_name]/html()\",\r\n                releaseDateRegex: \"//div[@class=blog_bottom]/ul/li/html()\",\r\n                contentRegex: \"//div[@class=blog_content]/html()\",\r\n                targetLinksRegex: \".*{uid}\\\\.iteye\\\\.com/blog/[0-9]+\",\r\n                tagRegex: \"//div[@class=news_tag]/a/html()\",\r\n                header: [\r\n                    \"Host={uid}.iteye.com\",\r\n                    \"Referer=http://{uid}.iteye.com/\"\r\n                ],\r\n                entryUrls: \'http://{uid}.iteye.com/?page={curPage}\'\r\n            },\r\n            csblogs: {\r\n                domain: \"www.cnblogs.com\",\r\n                titleRegex: \"//a[@id=cb_post_title_url]/html()\",\r\n                authorRegex: \"//div[@class=postDesc]/a[1]/html()\",\r\n                releaseDateRegex: \"//span[@id=post-date]/html()\",\r\n                contentRegex: \"//div[@id=cnblogs_post_body]/html()\",\r\n                targetLinksRegex: \".*www\\\\.cnblogs\\\\.com/{uid}/p/[\\\\w\\\\d]+\\\\.html\",\r\n                tagRegex: \"//div[@id=EntryTag]/a/html()\",\r\n                header: [\r\n                    \"Host=www.cnblogs.com\",\r\n                    \"Referer=https://www.cnblogs.com/\"\r\n                ],\r\n                entryUrls: \'https://www.cnblogs.com/{uid}/default.html?page={curPage}\'\r\n            }\r\n        }', now(), now());
@@ -127,7 +127,7 @@ VALUES (34, 'loginRetryNum', '5', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
 VALUES (35, 'installdate', now(), now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
-VALUES (36, 'copyright', 'Copyright zhyd.me', now(), now());
+VALUES (36, 'copyright', 'Copyright hanyunpeng0521.github.io', now(), now());
 INSERT INTO `px_blog`.`sys_config`(`id`, `config_key`, `config_value`, `create_time`, `update_time`)
 VALUES (37, 'dynamicTitle', '您有一条新消息', now(), now());
 
@@ -135,14 +135,14 @@ VALUES (37, 'dynamicTitle', '您有一条新消息', now(), now());
 TRUNCATE TABLE `px_blog`.`sys_link`;
 -- 初始化友情链接
 INSERT INTO `px_blog`.`sys_link`
-VALUES ('1', 'https://www.zhyd.me', '张亚东博客', '一个程序员的个人博客', 'yadong.zhang0415@gmail.com', null,
-        'https://static.zhyd.me/static/img/favicon.ico', '1', '1', null, 'ADMIN', now(), now());
+VALUES ('1', 'https://hanyunpeng0521.githun.io', '韩云朋博客', '一个年轻程序员的个人博客', 'XXX@gmail.com', null,
+        'https://hanyunpeng0521.github.io/img/favicon.ico', '1', '1', null, 'ADMIN', now(), now());
 
 -- 清空系统通知表
 TRUNCATE TABLE `px_blog`.`sys_notice`;
 -- 初始化系统通知
 INSERT INTO `px_blog`.`sys_notice`
-VALUES (1, 1, 'RELEASE', 'OneBlog开源博客', 'OneBlog开源博客，一款超好用的Java版开源博客', now(), now());
+VALUES (1, 1, 'RELEASE', 'PxBlog博客', 'PxBlog博客，一款超好用的Java版开源博客', now(), now());
 INSERT INTO `px_blog`.`sys_notice`
 VALUES (2, 1, 'RELEASE', '问题反馈', '在使用过程中，有问题请先参考相关文档，确实无法解决的，请优先提Issue，感谢各位老铁', now(), now());
 
@@ -194,7 +194,7 @@ VALUES ('10', 'TM_NGINX_FILE_SERVER',
 TRUNCATE TABLE `px_blog`.`sys_update_recorde`;
 -- 初始化系统更新通知
 INSERT INTO `px_blog`.`sys_update_recorde`
-VALUES ('1', '1.0.1', '第一版', now(), now(), now());
+VALUES ('1', '1.0.0', '第一版', now(), now(), now());
 
 -- 清空系统资源表
 TRUNCATE TABLE `px_blog`.`sys_resources`;
@@ -525,11 +525,12 @@ VALUES ('96', '3', '49', now(), now());
 TRUNCATE TABLE `px_blog`.`sys_user`;
 -- 初始化系统用户
 INSERT INTO `px_blog`.`sys_user`
-VALUES (1, 'root', 'CGUx1FN++xS+4wNDFeN6DA==', '超级管理员', '15151551516', '843977358@qq.com', '843977358', NULL, NULL,
-        'https://static.zhyd.me/static/img/favicon.ico', 'ROOT', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL,
+VALUES (1, 'root', 'CGUx1FN++xS+4wNDFeN6DA==', '超级管理员', '138xxxxxxxx', '1670787xxx@qq.com', '1670787xxx', NULL, NULL,
+        'https://s2.ax1x.com/2020/02/11/1ovw6J.jpg', 'ROOT', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL,
         '0:0:0:0:0:0:0:1', '2019-06-01 11:59:23', 254, NULL, 1, now(), now());
 INSERT INTO `px_blog`.`sys_user`
-VALUES (2, 'admin', 'gXp2EbyZ+sB/A6QUMhiUJQ==', '管理员', '15151551516', '843977358@qq.com', '843977358', NULL, NULL, NULL,
+VALUES (2, 'admin', 'gXp2EbyZ+sB/A6QUMhiUJQ==', '管理员', '138xxxxxxxx', '1670787xxx@qq.com', '1670787xxx', NULL, NULL,
+        'https://s2.ax1x.com/2020/02/11/1ovw6J.jpg',
         'ADMIN', NULL, NULL, NULL, NULL, NULL, 1, 1, 0, 0, '0:0:0:0:0:0:0:1', '0:0:0:0:0:0:0:1', now(), 2, NULL, 1,
         now(), now());
 INSERT INTO `px_blog`.`sys_user`
@@ -550,6 +551,6 @@ VALUES ('3', '3', '3', now(), now());
 TRUNCATE TABLE `px_blog`.`px_comment`;
 -- 初始化评论数据
 INSERT INTO `px_blog`.`px_comment`
-VALUES (0, '1', null, '0', '843977358', '七彩狼', 'https://q1.qlogo.cn/g?b=qq&nk=843977358&s=40', '843977358@qq.com',
-        'https://www.zhyd.me', 'VERIFYING', '0:0:0:0:0:0:0:1', null, null, '未知', 'Windows 7', null,
+VALUES (0, '1', null, '0', '123456', '七彩狼', 'https://q1.qlogo.cn/g?b=qq&nk=843977358&s=40', '123456789@qq.com',
+        'https://baidu.com', 'VERIFYING', '0:0:0:0:0:0:0:1', null, null, '未知', 'Windows 7', null,
         'Chrome 65.0.3325.146', null, '<p>测试评论</p>', null, '0', '0', now(), now());

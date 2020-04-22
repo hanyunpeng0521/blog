@@ -2,15 +2,10 @@
  *
  * 项目核心Js类，负责项目前端模板方面的初始化等操作
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @website https://www.zhyd.me
- * @version 1.0
- * @date 2018-04-25
- * @since 1.0
  */
 var editor = null, simplemde = null;
 
-var zhyd = window.zhyd || {
+var px = window.px || {
     combox: {
         init: function () {
             $('select[target=combox]').each(function (e) {
@@ -157,7 +152,7 @@ var zhyd = window.zhyd || {
 
         },
         init: function (options) {
-            var config = $.extend(zhyd.wangEditor.defaultConfig, options);
+            var config = $.extend(px.wangEditor.defaultConfig, options);
             var E = window.wangEditor;
             editor = new E(config.container);
             // 配置编辑器 start
@@ -173,7 +168,7 @@ var zhyd = window.zhyd || {
                 $contentBox.val(html);
             };
             // 注册上传文件插件
-            zhyd.wangEditor.plugins.registerUpload(editor, config.uploadUrl, config.uploadFileName, config.uploadType, function (result, curEditor) {
+            px.wangEditor.plugins.registerUpload(editor, config.uploadUrl, config.uploadFileName, config.uploadType, function (result, curEditor) {
                 // 图片上传并返回结果，自定义插入图片的事件（而不是编辑器自动插入图片！！！）
                 // insertImg 是插入图片的函数，editor 是编辑器对象，result 是服务器端返回的结果
                 if (result.status == 200) {
@@ -188,9 +183,9 @@ var zhyd = window.zhyd || {
             // 配置编辑器 end
             editor.create();
             // 注册全屏插件
-            zhyd.wangEditor.plugins.registerFullscreen(config.container);
+            px.wangEditor.plugins.registerFullscreen(config.container);
             // 注册图片资源库
-            zhyd.wangEditor.plugins.registerMaterial(editor, $contentBox);
+            px.wangEditor.plugins.registerMaterial(editor, $contentBox);
 
             if (config.customCss) {
                 // 自定义编辑器的样式
@@ -202,7 +197,7 @@ var zhyd = window.zhyd || {
         },
         plugins: {
             registerFullscreen: function () {
-                var E = zhyd.wangEditor._instance;
+                var E = px.wangEditor._instance;
                 // 全屏插件
                 E.fullscreen = {
                     init: function (editorBox) {
@@ -295,8 +290,8 @@ var zhyd = window.zhyd || {
             uniqueId: "mdEditor_1"
         },
         init: function (options) {
-            var $op = $.extend(zhyd.wangEditor.defaultConfig, options);
-            zhyd.simpleMDE.plugins.registerAutosave();
+            var $op = $.extend(px.wangEditor.defaultConfig, options);
+            px.simpleMDE.plugins.registerAutosave();
             // Powered by https://github.com/sparksuite/simplemde-markdown-editor
             simplemde = new SimpleMDE({
                 // textarea的DOM对象
@@ -326,9 +321,9 @@ var zhyd = window.zhyd || {
                 tabSize: 4,
                 status: false
             });
-            zhyd.simpleMDE.plugins.registerFullscreen();
-            zhyd.simpleMDE.plugins.registerUpload($op.uploadUrl, simplemde);
-            zhyd.simpleMDE.plugins.registerMaterial();
+            px.simpleMDE.plugins.registerFullscreen();
+            px.simpleMDE.plugins.registerUpload($op.uploadUrl, simplemde);
+            px.simpleMDE.plugins.registerMaterial();
 
             $(".editor-preview-side").addClass("markdown-body");
         },
@@ -499,12 +494,12 @@ var zhyd = window.zhyd || {
             $(".loading").each(function () {
                 var $this = $(this);
                 if (!$this.hasClass("locking")) {
-                    zhyd.mask.loading($this, $this.data("mask"));
+                    px.mask.loading($this, $this.data("mask"));
                 }
             });
             $(".locking").each(function () {
                 var $this = $(this);
-                zhyd.mask.locking($this, $this.data("mask"));
+                px.mask.locking($this, $this.data("mask"));
             });
         },
         loading: function (container, msg) {
@@ -523,7 +518,7 @@ var zhyd = window.zhyd || {
 };
 
 $(document).ready(function () {
-    zhyd.initTextSlider();
+    px.initTextSlider();
 
     $("img.lazy-img").lazyload({
         placeholder: appConfig.staticPath + "/img/loading.gif",
@@ -564,9 +559,9 @@ $(document).ready(function () {
             });
         }
     });
-    zhyd.combox.init();
-    zhyd.tagsInput.init();
-    zhyd.mask.init();
+    px.combox.init();
+    px.tagsInput.init();
+    px.mask.init();
 
     /**
      * 针对shiro框架中， ajax请求时session过期后的页面跳转

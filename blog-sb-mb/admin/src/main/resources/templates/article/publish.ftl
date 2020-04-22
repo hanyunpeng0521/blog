@@ -69,7 +69,7 @@
     <script>
         articleId = '${id}';
         $(function () {
-            zhyd.wangEditor.init({
+            wangEditor.init({
                 container: "#editor",
                 textareaName: "content",
                 uploadUrl: "/api/uploadFile",
@@ -82,5 +82,5 @@
             })
         });
     </script>
-    <script src="/assets/js/zhyd.publish-article.js"></script>
+    <script src="/assets/js/publish-article.js"></script>
 </@footer>

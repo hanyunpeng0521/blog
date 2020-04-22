@@ -155,27 +155,6 @@ public class RenderController {
         return ResultUtil.view("update/list");
     }
 
-    @RequiresPermissions("icons")
-    @BussinessLog(value = "进入icons页")
-    @GetMapping("/icons")
-    public ModelAndView icons(Model model) {
-        return ResultUtil.view("other/icons");
-    }
-
-    @RequiresPermissions("shiro")
-    @BussinessLog(value = "进入shiro示例页")
-    @GetMapping("/shiro")
-    public ModelAndView shiro(Model model) {
-        return ResultUtil.view("other/shiro");
-    }
-
-    @RequiresUser
-    @BussinessLog("进入编辑器测试用例页面")
-    @GetMapping("/editor")
-    public ModelAndView editor(Model model) {
-        return ResultUtil.view("other/editor");
-    }
-
     @RequiresPermissions("notice")
     @BussinessLog("进入通知管理页")
     @GetMapping("/notice")

@@ -70,11 +70,11 @@
                                     <div class="item form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="domain">主域名 <i
                                                     class="fa fa-question-circle"
-                                                    title="例如：https://www.zhyd.me的主域名就是zhyd.me"></i> <span
+                                                    title="例如：https://www.me的主域名就是me"></i> <span
                                                     class="required">*</span></label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input type="text" class="form-control col-md-7 col-xs-12" name="domain"
-                                                   id="domain" required="required" placeholder="例如: zhyd.me"/>
+                                                   id="domain" required="required" placeholder="例如: me"/>
                                         </div>
                                     </div>
                                     <div class="item form-group">
@@ -126,7 +126,7 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input type="text" class="form-control col-md-7 col-xs-12" name="copyright"
                                                    id="copyright"
-                                                   placeholder="例如：Copyright &copy; ${.now?string("yyyy")} zhyd.me All Rights Reserved"/>
+                                                   placeholder="例如：Copyright &copy; ${.now?string("yyyy")} me All Rights Reserved"/>
                                         </div>
                                     </div>
                                     <div class="item form-group">
@@ -284,7 +284,7 @@
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input type="text" class="form-control col-md-7 col-xs-12"
                                                        name="localFileUrl" id="localFileUrl" required="required"
-                                                       placeholder="请输入文件服务器域名，如：http://file.zhyd.me/"/>
+                                                       placeholder="请输入文件服务器域名，如：http://file.me/"/>
                                             </div>
                                         </div>
                                         <div class="item form-group">
@@ -711,7 +711,7 @@
                                     <div class="item form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="dynamicTitle">动态标题
                                             <i class="fa fa-question-circle"
-                                               title="当切换浏览器tab时，在原tab上的标题。比如https://www.zhyd.me上的“麻溜儿回来~~~”"></i></label>
+                                               title="当切换浏览器tab时，在原tab上的标题。比如https://www.me上的“麻溜儿回来~~~”"></i></label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input type='text' class="form-control" id="dynamicTitle"
                                                    name="dynamicTitle" placeholder="请输入切换窗口时想要显示的标题，如：麻溜儿回来~~~"/>
@@ -760,7 +760,7 @@
                             <dt><i class="fa fa-info-circle fa-fw"></i>1. 替换配置文件中的指定内容</dt>
                             <dd><code>serverName</code> 改为自己的域名</dd>
                             <dd><code>serverPath</code> Nginx文件服务映射的服务器路径，同云存储中填写的“文件存储路径”</dd>
-                            <dd><code>serverReferers</code> 防盗链的Referers，多个用空格分隔，支持通配符，比如：<code>*.zhyd.me zhyd.me</code>
+                            <dd><code>serverReferers</code> 防盗链的Referers，多个用空格分隔，支持通配符，比如：<code>*.me me</code>
                             </dd>
                             <dd><code>serverLogoPath</code> 触发防盗链后显示的默认图片，即当别人引用你网站中的图片时，会触发防盗链，对方网站中看到的就是 <code>serverLogoPath</code>对应的文件内容
                             </dd>

@@ -94,8 +94,8 @@
             uniqueId: "mdEditor_1",
             uploadUrl: "/api/uploadFileForMd"
         };
-        zhyd.simpleMDE.init(op);
+        px.simpleMDE.init(op);
         articleId = '${id}';
     </script>
-    <script src="/assets/js/zhyd.publish-article.js"></script>
+    <script src="/assets/js/publish-article.js"></script>
 </@footer>

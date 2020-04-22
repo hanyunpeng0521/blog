@@ -2,11 +2,6 @@
  *
  * 图片预览
  *
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @website https://www.zhyd.me
- * @version 1.0
- * @date 2018-04-25
- * @since 1.0
  */
 /*
  * jq 1.9以后已不再支持$.browser 和 $.browser.version,此处自己实现
