@@ -1,16 +1,25 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://data_mysql:3306/blog?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: root
+    password: vOl9xCTPI8rUvRsIByHqTrdo
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
 logging:
   level:
-    root: info
-    com.hyp.learn: debug
+    root: error
+    com.hyp.learn: error
 server:
-  port: 8000
+  port: 8080
+  #Jetty配置
+  jetty:
+    acceptors: 2
+    selectors: 4
+    min-threads: 8
+    max-threads: 300
+    accesslog:
+      enabled: true
+      append: true

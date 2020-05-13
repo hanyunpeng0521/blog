@@ -7,7 +7,7 @@
 
 **技术组合：**
 
-*  后端：Spring Boot + JPA + thymeleaf模板
+*  后端：Spring Boot + JPA + Jetty + thymeleaf模板
 *  数据库：MySQL+H2
 *  前端UI：Semantic UI框架
 
@@ -16,6 +16,7 @@
 *  IDEA
 *  Maven 3
 *  JDK 8
+*  Jetty
 
 **内容模块：**
 
